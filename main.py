@@ -7,8 +7,8 @@ speed(-1)
 plant_coor = ((-420, -120), (-300, -240), (150, -300))
 seaweed_coor = ((-350, -200), (-390, -250), (-330, -360), (-100, -200), (-130, -270),
                 (-30, -240), (10, -220), (60, -300), (250, -370), (320, -320))
-
-
+fish_coor =((300, -200),)
+hideturtle()
 def draw_sand():
     penup()
     goto(-445, -100)
@@ -55,19 +55,50 @@ def draw_seaweed(x, y):
     circle(-direction, 100)
 
 
-def draw_fish():
+def draw_fish(x, y):
+    pensize(1)
+    penup()
+    goto(x,y)
+    pendown()
+    color('#d8ff14')
+    begin_fill()
     left(30)
     forward(20)
     right(90)
-    circle(50, 120)
+    circle(30, 120)
+    left(90)
+    circle(50, 60)
+    right(70)
+    forward(25)
+    left(170)
+    circle(-20,100)
+    end_fill()
+    #eyes of fish
+    penup()
+    goto(xcor()+60, ycor()+15)
+    pendown()
+    color('black', '#d6d6cb')
+    begin_fill()
+    circle(4)
+    end_fill()
+    penup()
+    goto(xcor()+2,ycor()-4)
+    dot(3)
+    # lines on the fish
+    penup()
+    goto(xcor()-25, ycor()-10)
+    pendown()
+    color('red')
+    left(180)
+    circle(10, 130)
+    penup()
+    goto(xcor()+10, ycor()+2)
+    pendown()
+    circle(12,-140)
 
-    circle(-50, 160)
 
-
-#draw_fish()
 
 draw_sand()
-
 left(180)  # черепаха начинает смотреть вправо после sand
 for i in range(3):
     draw_plant(plant_coor[i][0], plant_coor[i][1])
@@ -80,4 +111,7 @@ for i in range(10):
     penup()
     home()  # чтобы черепашка после каждой водоросли возвращалась в стандартное положение
     pendown()
+
+for i in range(1):
+    draw_fish(fish_coor[i][0], fish_coor[i][1])
 mainloop()
