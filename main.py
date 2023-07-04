@@ -8,7 +8,7 @@ plant_coor = ((-420, -120), (-300, -240), (150, -300))
 seaweed_coor = ((-350, -200), (-390, -250), (-330, -360), (-100, -200), (-130, -270),
                 (-30, -240), (10, -220), (60, -300), (250, -370), (320, -320))
 fish_coor =((300, -200),(-400, 300), (-350, 250))
-#hideturtle()
+hideturtle()
 def draw_sand():
     penup()
     goto(-445, -100)
@@ -101,7 +101,10 @@ def draw_dolphin(x,y):
     penup()
     goto(x,y)
     pendown()
+    color('#7eaece')
+    begin_fill()
     pensize(2)
+    coor = pos()
     circle(15,-160)
     left(180)
     for i in range(9):
@@ -111,15 +114,91 @@ def draw_dolphin(x,y):
         forward(i)
         right(6)
     forward(150)
+    #color('blue')
     for i in range(20):
         backward(i)
         left(2)
     for i in range(20):
-        backward(i)
-        left(2)
-
-
-
+        backward(7)
+        left(1)
+    for i in range(20):
+        backward(2)
+        left(1)
+    for i in range(15):
+        backward(3)
+        left(1)
+    backward(20)
+    end_fill()
+    penup()
+    goto(coor)
+    pendown()
+    color('#E2F4FB')
+    left(30)
+    for i in range(10):
+        forward(5)
+        left(1)
+    color('#daf0ed')
+    begin_fill()
+    right(30)
+    for i in range(20):
+        forward(5)
+        right(2)
+    for i in range(20):
+        forward(7)
+        right(1)
+    for i in range(20):
+        forward(2)
+        right(1)
+    right(170)
+    color('#7eaece','#E2F4FB')
+    circle(200, 30)
+    for i in range(15):
+        forward(i)
+        left(1)
+    for i in range(15):
+        forward(3)
+        left(1)
+    left(10)
+    for i in range(35):
+        forward(1)
+        left(1)
+    for i in range(5):
+        forward(1)
+        right(7)
+    right(25)
+    for i in range(20):
+        forward(1)
+        right(2)
+    end_fill()
+    #рисуем улыбку
+    color('#4d4e57')
+    pensize(4)
+    right(100)
+    circle(100, 30)
+    left(60)
+    for i in range(10):
+        forward(1)
+        right(1)
+    for i in range(20):
+        backward(1)
+        left(1)
+    #рисуем глаз
+    penup()
+    goto(xcor()+20, ycor()+40)
+    pendown()
+    color('white')
+    begin_fill()
+    circle(10)
+    end_fill()
+    penup()
+    goto(xcor()-10, ycor()-10)
+    pendown()
+    color('#4d4e57')
+    dot(15)
+    penup()
+    goto(xcor()+17, ycor()+20)
+    pendown()
+    circle(10,90)
 draw_dolphin(0,0)
 
 """
