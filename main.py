@@ -8,7 +8,7 @@ plant_coor = ((-420, -120), (-300, -240), (150, -300))
 seaweed_coor = ((-350, -200), (-390, -250), (-330, -360), (-100, -200), (-130, -270),
                 (-30, -240), (10, -220), (60, -300), (250, -370), (320, -320))
 fish_coor =((300, -200),(-400, 300), (-350, 250))
-hideturtle()
+#hideturtle()
 def draw_sand():
     penup()
     goto(-445, -100)
@@ -182,7 +182,7 @@ def draw_dolphin(x,y):
     for i in range(20):
         backward(1)
         left(1)
-    #рисуем глаз
+    #рисуем глаза
     penup()
     goto(xcor()+20, ycor()+40)
     pendown()
@@ -199,6 +199,42 @@ def draw_dolphin(x,y):
     goto(xcor()+17, ycor()+20)
     pendown()
     circle(10,90)
+    #рисуем плавник верхний
+    penup()
+    goto(xcor()+180, ycor()+20)
+    pendown()
+    color('#7eaece')
+    begin_fill()
+    left(180)
+    for i in range(20):
+        forward(7)
+        right(3)
+    for i in range(20):
+        forward(2)
+        right(4)
+    right(90)
+    circle(60, 130)
+    end_fill()
+    goto(xcor()-160, ycor()+40)
+    #плавник нижний, ближний
+    right(30)
+    begin_fill()
+    for i in range(20):
+        forward(5)
+        left(2)
+    for i in range(10):
+        forward(2)
+        left(5)
+    forward(10)
+    left(100)
+    for i in range(20):
+        forward(3)
+        right(2)
+    end_fill()
+
+
+
+
 draw_dolphin(0,0)
 
 """
