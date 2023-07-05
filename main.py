@@ -8,7 +8,7 @@ plant_coor = ((-420, -120), (-300, -240), (150, -300))
 seaweed_coor = ((-350, -200), (-390, -250), (-330, -360), (-100, -200), (-130, -270),
                 (-30, -240), (10, -220), (60, -300), (250, -370), (320, -320))
 fish_coor =((300, -200),(-400, 300), (-350, 250))
-#hideturtle()
+hideturtle()
 def draw_sand():
     penup()
     goto(-445, -100)
@@ -231,13 +231,61 @@ def draw_dolphin(x,y):
         forward(3)
         right(2)
     end_fill()
+    #плавник дальний
+    #color('black')
+    penup()
+    goto(xcor()-110, ycor()+12)
+    pendown()
+    right(130)
+    begin_fill()
+    for i in range(10):
+        forward(3)
+        left(2)
+    for i in range(10):
+        forward(2)
+        left(5)
+    forward(10)
+    left(100)
+    for i in range(9):
+        forward(3)
+        right(1)
+    end_fill()
+    #хвост-плавник
+    #color('black')
+    penup()
+    goto(xcor()+162, ycor()-190)
+    pendown()
+    right(180)
+    begin_fill()
+    for i in range(20):
+        forward(3)
+        right(2)
+    for i in range(10):
+        forward(3)
+        left(i)
+    for i in range(10):
+        forward(3)
+        left(5)
+    for i in range(10):
+        forward(2)
+        left(10)
+    for i in range(15):
+        forward(3)
+        right(i)
+    for i in range(10):
+        forward(3)
+        right(i)
+    for i in range(20):
+        forward(1)
+        left(7)
+    circle(60,100)
+    for i in range(17):
+        forward(1)
+        right(2)
+    end_fill()
 
 
 
-
-draw_dolphin(0,0)
-
-"""
 draw_sand()
 left(180)  # черепаха начинает смотреть вправо после sand
 for i in range(3):
@@ -255,4 +303,6 @@ for i in range(10):
 for i in range(3):
     draw_fish(fish_coor[i][0], fish_coor[i][1])
     right(20) # поворачиваем, чтобы следующие рыбки рисовались в нужном направлении"""
+
+draw_dolphin(0,180)
 mainloop()
