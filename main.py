@@ -8,6 +8,7 @@ plant_coor = ((-420, -120), (-300, -240), (150, -300))
 seaweed_coor = ((-350, -200), (-390, -250), (-330, -360), (-100, -200), (-130, -270),
                 (-30, -240), (10, -220), (60, -300), (250, -370), (320, -320))
 fish_coor =((300, -200),(-400, 300), (-350, 250))
+bubble_coor =((30,300),(90, 350), (10, 370), (-170, 50), (-230, 70), (-190, 160), (10,40), (140, 0), (200, -20), (-360, 390),(-250, 350))
 hideturtle()
 def draw_sand():
     penup()
@@ -284,6 +285,23 @@ def draw_dolphin(x,y):
         right(2)
     end_fill()
 
+def draw_buble(x,y):
+    pensize(1)
+    penup()
+    goto(x,y)
+    pendown()
+    color('dark blue','#cbecf2')
+    circle(20)
+    penup()
+    goto(xcor()-20, ycor())
+    pendown()
+    color('white')
+    begin_fill()
+    pensize(10)
+    forward(1)
+    end_fill()
+
+
 
 
 draw_sand()
@@ -305,4 +323,8 @@ for i in range(3):
     right(20) # поворачиваем, чтобы следующие рыбки рисовались в нужном направлении"""
 
 draw_dolphin(0,180)
+
+for i in range(11):
+    draw_buble(bubble_coor[i][0], bubble_coor[i][1])
+
 mainloop()
